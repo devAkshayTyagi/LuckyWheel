@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context="com.ryan.luckywheel.MainActivity">
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <SeekBar
+        android:id="@+id/seekBarId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="120dp"
+        android:layoutDirection="rtl"
+        android:mirrorForRtl="true"
+        android:padding="2dp"
+        android:thumb="@drawable/close_seekbar"
+        android:thumbOffset="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layoutDirection="rtl"
+        android:mirrorForRtl="true"
+        android:src="@drawable/close_seekbar"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarId"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarId"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <rubikstudio.library.LuckyWheelView
+        android:id="@+id/luckyWheel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_above="@+id/play"
+        android:layout_marginTop="50dp"
+        android:elevation="1dp"
+        android:translationY="-50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHeight_percent=".7"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarId"
+        app:lkwCursor="@drawable/ic_arrow" />
+
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/activate"
+        android:text="PLAY"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/bottom_thum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
